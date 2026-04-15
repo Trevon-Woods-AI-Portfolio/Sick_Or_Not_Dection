@@ -58,6 +58,8 @@ const loginUser = async (req, res) => {
         username: userExists.username,
         email: userExists.email,
       };
+
+      console.log("User info being sent: ", userInfo)
   
       generateTokenAndCookie(userExists._id, res);
   
