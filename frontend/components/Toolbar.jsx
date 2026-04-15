@@ -16,7 +16,7 @@ const Toolbar = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("/api/user/logout", {
+      const res = await fetch("https://health-risk-detector-back.onrender.com/api/user/logout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
