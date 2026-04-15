@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
   let user = useSelector((state) => state.user);
 
   useEffect(() => {
-    const socket = io("http://localhost:3535", {
+    const socket = io("https://health-risk-detector-back.onrender.com, {
       auth: {
         userId: user?.id,
       },
