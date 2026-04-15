@@ -25,6 +25,8 @@ const Login = () => {
       });
       const userInfo = await res.json();
 
+      console.log("Returned userInfo: ", userInfo)
+
       if (userInfo.error) {
         return console.log("Error logging in:", userInfo.error);
       }
