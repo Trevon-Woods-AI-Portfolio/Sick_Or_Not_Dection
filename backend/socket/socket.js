@@ -5,10 +5,10 @@ import { Server } from "socket.io";
 
 const app = express();
 
-// app.use(cors({
-//     origin: "https://sick-or-not-dection.onrender.com",
-//     credentials: true
-//   }));
+app.use(cors({
+    origin: "https://sick-or-not-dection.onrender.com",
+    credentials: true
+  }));
 
 const server = http.createServer(app);
 
