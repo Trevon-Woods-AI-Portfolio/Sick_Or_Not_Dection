@@ -7,12 +7,12 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     port: 3000,
-    proxy: {
-      "/api": {
-        target: "https://health-risk-detector-back.onrender.com",
-        changeOrigin: true,
-        secure: false,
-      },
-    },
+    // proxy: {
+    //   "/api": {
+    //     target: "https://health-risk-detector-back.onrender.com",
+    //     changeOrigin: true,
+    //     secure: false,
+    //   },
+    // },
   }
 });
