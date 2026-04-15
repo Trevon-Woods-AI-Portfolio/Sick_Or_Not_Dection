@@ -9,7 +9,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "http://localhost:3535",
+        target: "https://health-risk-detector-back.onrender.com",
         changeOrigin: true,
         secure: false,
       },
