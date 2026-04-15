@@ -5,14 +5,37 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import TuneIcon from "@mui/icons-material/Tune";
 import SearchIcon from "@mui/icons-material/Search";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setLogout } from "../state/state";
 
 const Toolbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector((state) => state.user);
 
+  const handleLogout = async () => {
+    try {
+      const res = await fetch("/api/user/logout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userData: {
+            id: user?.id,
+          },
+        }),
+      });
 
+      const data = await res.json();
+      if (data.error) {
+        return console.error("Error during logout:", data.error);
+      }
+      dispatch(setLogout());
+      navigate("/");
+    } catch (error) {
+      console.error("Error during logout:", error);
+    }
+  };
   
   return (
     <div className="fixed mt-3 w-[84.5%] h-[8.5%] flex justify-center items-center z-10">
@@ -41,6 +64,7 @@ const Toolbar = () => {
           <LogoutIcon
             className="text-blue-400 cursor-pointer"
             style={{ fontSize: 25 }}
+            onClick={handleLogout}
           />
         </div>
       </div>
