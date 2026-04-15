@@ -17,15 +17,12 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      console.log("Object being sent: ", formData)
-      const res = await fetch("/api/user/login", {
+      const res = await fetch("https://health-risk-detector-back.onrender.com/api/user/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       const userInfo = await res.json();
-
-      console.log("Returned userInfo: ", userInfo)
 
       if (userInfo.error) {
         return console.log("Error logging in:", userInfo.error);

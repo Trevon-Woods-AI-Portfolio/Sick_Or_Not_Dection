@@ -9,7 +9,6 @@ const Detections = () => {
   const dispatch = useDispatch();
   const detections = useSelector(state => state.detections)
 
-  console.log("Detections: ", detections)
   useEffect(() => {getDetections()}, [])
   useEffect(() => {
     socket?.on("newData", async () => {
@@ -20,7 +19,7 @@ const Detections = () => {
 
   const getDetections = async () => {
     try {
-      const res = await fetch("/api/data/detections", {
+      const res = await fetch("https://health-risk-detector-back.onrender.com/api/data/detections", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -41,7 +40,6 @@ const Detections = () => {
     }
   };
 
-  const resetData = () => {};
   return (
     <div className="text-black flex flex-col justify-center items-center mt-44 gap-3">
       {detections.detections?.map((data, index) => (
