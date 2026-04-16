@@ -3,3 +3,4 @@ This is a Object Dection and Machine Learning project to detect a person's body 
 
 Trevon
 Aima 
+Waseem Basit
