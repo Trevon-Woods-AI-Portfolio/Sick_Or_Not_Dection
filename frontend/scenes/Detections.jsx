@@ -47,7 +47,7 @@ const Detections = () => {
   };
   return (
     <>
-      <h1 className="mt-28 mx-14 text-zinc-900">Detections</h1>
+      <p className="mt-24 mx-14 text-zinc-900 text-5xl font-medium py-2">Detections</p>
       <div className="border-t border-zinc-900 flex justify-center items-center">
         <div className="border-b border-zinc-900 flex justify-evenly px-[17rem] gap-[5.5rem]">
           <div className="font-bold">SpO2</div>

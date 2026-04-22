@@ -181,7 +181,7 @@ const Analysis = () => {
 
   return (
     <>
-      <h1 className="mt-28 mx-14 text-zinc-900">Environment Analysis</h1>
+      <p className="mt-24 mx-14 text-zinc-900 text-5xl font-medium py-2">Environment Analysis</p>
       <div className="border-t border-zinc-900 flex justify-center items-center"></div>
       <section className="w-full h-full px-36">
         <section className="h-[25%] w-full grid grid-cols-6 gap-10 mt-7">

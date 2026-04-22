@@ -85,7 +85,7 @@ const Insights = () => {
   };
   return (
     <>
-      <h1 className="mt-28 mx-14 text-zinc-900">Insights</h1>
+      <p className="mt-24 mx-14 text-zinc-900 text-5xl font-medium py-2">Insights</p>
       <div className="border-t border-zinc-900 flex justify-center items-center"></div>
       <section className="w-full h-full flex flex-col justify-center items-center gap-5 mt-7">
         <div className="w-[80%] h-full grid grid-cols-6 gap-10">
