@@ -330,25 +330,25 @@ const Analysis = () => {
             </div>
             <div className="col-span-4 rounded-lg">
               <div className="h-full w-full flex justify-between gap-5">
-                <div className="bg-linear-to-r from-black to-zinc-700 w-[33%] rounded-lg flex flex-col justify-center items-center shadow-xl">
+                <div className="bg-linear-to-r from-black to-zinc-700 w-[33%] rounded-lg flex flex-col justify-evenly items-center shadow-xl">
                   <div className="px-3 mt-2">
                     <p className="text-[#63b3ed]">Change</p>
                   </div>
                   <div className="flex justify-end items-center gap-2 px-5">
-                    <h1 className="text-[#008000]">
+                    <p className="text-[#008000] text-5xl font-semibold">
                       {riskTrendData[riskTrendData.length - 1].value <
                       riskTrendData[riskTrendData.length - 2].value
                         ? riskTrendData[riskTrendData.length - 2].value -
                           riskTrendData[riskTrendData.length - 1].value
                         : riskTrendData[riskTrendData.length - 1].value -
                           riskTrendData[riskTrendData.length - 2].value}
-                    </h1>
+                    </p>
                     <ArrowDownwardIcon
                       sx={{ color: "green", height: 50, width: 50 }}
                     />
                   </div>
                 </div>
-                <div className="bg-linear-to-r from-black to-zinc-700 w-[33%] rounded-lg flex flex-col justify-center items-center shadow-xl">
+                <div className="bg-linear-to-r from-black to-zinc-700 w-[33%] rounded-lg flex flex-col justify-evenly items-center shadow-xl">
                   <div className="px-3 mt-2">
                     <p className="text-[#63b3ed]">Highest</p>
                   </div>
@@ -356,12 +356,12 @@ const Analysis = () => {
                     <SentimentVeryDissatisfiedIcon
                       sx={{ color: "red", height: 50, width: 50 }}
                     />
-                    <h1 className="text-[#ff0000]">
+                    <p className="text-[#ff0000] text-5xl font-semibold">
                       {Math.max(...riskTrendData.map((o) => o.value))}
-                    </h1>
+                    </p>
                   </div>
                 </div>
-                <div className="bg-linear-to-r from-black to-zinc-700 w-[33%] rounded-lg flex flex-col justify-center items-center shadow-xl">
+                <div className="bg-linear-to-r from-black to-zinc-700 w-[33%] rounded-lg flex flex-col justify-evenly items-center shadow-xl">
                   <div className="px-3 mt-2">
                     <p className="text-[#63b3ed]">Lowest</p>
                   </div>
@@ -369,9 +369,9 @@ const Analysis = () => {
                     <SentimentSatisfiedAltIcon
                       sx={{ color: "green", height: 50, width: 50 }}
                     />
-                    <h1 className="text-[#008000]">
+                    <p className="text-[#008000] text-5xl font-semibold">
                       {Math.min(...riskTrendData.map((o) => o.value))}
-                    </h1>
+                    </p>
                   </div>
                 </div>
               </div>

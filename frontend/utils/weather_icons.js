@@ -40,6 +40,7 @@ export const weatherCodeLookup = {
     "620": "https://res.cloudinary.com/dmnspicpk/image/upload/v1776786336/snowy-4_k4iuw7.svg",
     "621": "https://res.cloudinary.com/dmnspicpk/image/upload/v1776786336/snowy-5_k88ca9.svg",
     "622": "https://res.cloudinary.com/dmnspicpk/image/upload/v1776786337/snowy-6_bl9lpd.svg",
+    "701": "https://res.cloudinary.com/dmnspicpk/image/upload/v1776786332/cloudy_ygbfil.svg",
     "800": "https://res.cloudinary.com/dmnspicpk/image/upload/v1776786332/day_uyis7a.svg",
     "801": "https://res.cloudinary.com/dmnspicpk/image/upload/v1776785310/cloudy-day-1_qewl0v.svg",
     "802": "https://res.cloudinary.com/dmnspicpk/image/upload/v1776786331/cloudy-day-2_vs9hf3.svg",
