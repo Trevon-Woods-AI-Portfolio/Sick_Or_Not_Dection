@@ -11,7 +11,7 @@ const Detections = () => {
 
   useEffect(() => {
     getDetections();
-    dispatch(setSelectedData({selectedData: detections.detections[0]}))
+    dispatch(setSelectedData({selectedData: detections?.detections[0]}))
   }, []);
   useEffect(() => {
     socket?.on("newData", async () => {
