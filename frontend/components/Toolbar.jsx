@@ -39,7 +39,7 @@ const Toolbar = () => {
   
   return (
     <div className="fixed mt-3 w-[84.5%] h-[8.5%] flex justify-center items-center z-10">
-      <div className="flex justify-between items-center border border-black w-[80%] h-[73px] rounded-2xl bg-zinc-950 z-10 shadow-xl opacity-75 p-8">
+      <div className="flex justify-between items-center border border-black w-[80%] h-[73px] rounded-2xl bg-zinc-950 z-10 shadow-xl p-8">
         <div className="">
           <input
             type="text"
@@ -57,7 +57,7 @@ const Toolbar = () => {
           <SettingsIcon className="text-blue-400" style={{ fontSize: 25 }} />
           <Avatar
             alt="Profile Image"
-            src={"../assets/Profile.jpeg"}
+            src={"https://res.cloudinary.com/dmnspicpk/image/upload/v1776371806/BioImpulse_Logo_xjawfw.png"}
             sx={{ width: 45, height: 45 }}
             className="border border-2 border-blue-400"
           />

@@ -5,6 +5,7 @@ const initialState = {
   isLoggedIn: false,
   currentPage: "Detections",
   detections: [],
+  selectedData: null,
 };
 
 export const systemSlice = createSlice({
@@ -25,9 +26,12 @@ export const systemSlice = createSlice({
     setDetections: (state, action) => {
       state.detections = action.payload.detections;
     },
+    setSelectedData: (state, action) => {
+      state.selectedData = action.payload.selectedData
+    }
   },
 });
 
-export const { setLogin, setLogout, setCurrentPage, setDetections } =
+export const { setLogin, setLogout, setCurrentPage, setDetections, setSelectedData } =
   systemSlice.actions;
 export default systemSlice.reducer;

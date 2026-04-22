@@ -2,15 +2,16 @@ import React, { useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
 import { useSocket } from "../context/socketContext";
 import { useDispatch, useSelector } from "react-redux";
-import { setDetections } from "../state/state";
+import { setCurrentPage, setDetections, setSelectedData } from "../state/state";
 
 const Detections = () => {
-  const { socket, newDataFlag, setNewDataFlag } = useSocket();
+  const { socket } = useSocket();
   const dispatch = useDispatch();
   const detections = useSelector((state) => state.detections);
 
   useEffect(() => {
     getDetections();
+    dispatch(setSelectedData({selectedData: detections.detections[0]}))
   }, []);
   useEffect(() => {
     socket?.on("newData", async () => {
@@ -20,13 +21,10 @@ const Detections = () => {
 
   const getDetections = async () => {
     try {
-      const res = await fetch(
-        "https://health-risk-detector-back.onrender.com/api/data/detections",
-        {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      const res = await fetch("https://health-risk-detector-back.onrender.com/api/data/detections", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
 
       const detections_found = await res.json();
 
@@ -43,9 +41,13 @@ const Detections = () => {
     }
   };
 
+  const handleSelectData = (data) => {
+    dispatch(setSelectedData({selectedData: data}))
+    dispatch(setCurrentPage({currentPage: "Insights"}))
+  };
   return (
     <>
-      <h1 className="mt-28 mx-14 ">Detections</h1>
+      <h1 className="mt-28 mx-14 text-zinc-900">Detections</h1>
       <div className="border-t border-zinc-900 flex justify-center items-center">
         <div className="border-b border-zinc-900 flex justify-evenly px-[17rem] gap-[5.5rem]">
           <div className="font-bold">SpO2</div>
@@ -58,73 +60,73 @@ const Detections = () => {
       <div className="text-black flex flex-col justify-center items-center gap-3 py-3">
         {detections.detections?.map((data, index) => (
           <div
-            className="border h-[4rem] w-[70%] flex justify-evenly items-center rounded-full shadow-md"
+            className="border bg-linear-to-r from-black to-zinc-700 h-[4rem] w-[70%] flex justify-evenly items-center rounded-full shadow-md"
             key={index}
           >
             <Avatar
               alt="Profile Image"
-              src={data.image || `https://i.pravatar.cc/${index * 30}`}
+              src={data.image || `https://i.pravatar.cc/${index*30}`}
               sx={{ width: 45, height: 45 }}
               className="border border-2 border-blue-400"
             />
             <div
               className={`border-b-3 ${
                 data.spO2 >= 95 && data.spO2 < 101
-                  ? "border-green-400"
+                  ? "border-green-600"
                   : data.spO2 >= 90 && data.spO2 < 95
-                  ? "border-yellow-400"
-                  : "border-red-400"
-              } w-[2rem] flex justify-center items-center`}
+                  ? "border-yellow-600"
+                  : "border-red-600"
+              } w-[2rem] flex justify-center items-center text-white`}
             >
               {data.spO2}
             </div>
             <div
               className={`border-b-3 ${
                 data.bp < 120
-                  ? "border-green-400"
+                  ? "border-green-600"
                   : (data.bp >= 120 && data.bp <= 129) ||
                     (data.bp >= 130 && data.bp <= 139)
-                  ? "border-yellow-400"
-                  : "border-red-400"
-              } w-[2rem] flex justify-center items-center`}
+                  ? "border-yellow-600"
+                  : "border-red-600"
+              } w-[2rem] flex justify-center items-center text-white`}
             >
               {data.bp}
             </div>
             <div
               className={`border-b-3 ${
                 data.bpm >= 60 && data.bpm <= 100
-                  ? "border-green-400"
+                  ? "border-green-600"
                   : (data.bpm >= 50 && data.bpm <= 59) ||
                     (data.bpm >= 101 && data.bpm <= 120)
-                  ? "border-yellow-400"
-                  : "border-red-400"
-              } w-[2rem] flex justify-center items-center`}
+                  ? "border-yellow-600"
+                  : "border-red-600"
+              } w-[2rem] flex justify-center items-center text-white`}
             >
               {data.bpm}
             </div>
             <div
               className={`border-b-3 ${
                 data.temp <= 37.2
-                  ? "border-green-400"
+                  ? "border-green-600"
                   : data.temp >= 37.3 && data.temp <= 37.9
-                  ? "border-yellow-400"
-                  : "border-red-400"
-              } w-[2rem] flex justify-center items-center`}
+                  ? "border-yellow-600"
+                  : "border-red-600"
+              } w-[2rem] flex justify-center items-center text-white`}
             >
               {Math.round(((data.temp * 9) / 5 + 32) * 10) / 10}
             </div>
             <div
-              className={`border h-2rem] w-[3rem] flex justify-center items-center rounded-full ${
+              className={`border h-2rem] ${ data.prediction == "High" ? "border-red-600" : data.prediction == "Med" ? "border-yellow-600" : "border-green-600" } text-blue-100 w-[3rem] flex justify-center items-center rounded-full ${
                 data.prediction == "High"
-                  ? "bg-red-400"
+                  ? "bg-[#ff0000]"
                   : data.prediction == "Med"
-                  ? "bg-yellow-400"
-                  : "bg-green-400"
+                  ? "bg-[#FFA500]"
+                  : "bg-[#008000]"
               } text-blue-100`}
             >
               {data.prediction}
             </div>
-            <button className="border h-2rem] w-[4rem] rounded-full bg-blue-400 text-blue-100 hover:bg-zinc-900 hover:text-blue-400">
+            <button className="border border-blue-400 h-2rem] w-[4rem] rounded-full bg-blue-400 text-blue-100 hover:bg-zinc-900 hover:text-blue-400" onClick={() => (handleSelectData(data))}>
               Details
             </button>
           </div>
