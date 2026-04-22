@@ -11,7 +11,6 @@ const Detections = () => {
 
   useEffect(() => {
     getDetections();
-    dispatch(setSelectedData({selectedData: () => {if (detections.detections[0]) {return detections.detections[0]} else return {}}}))
   }, []);
   useEffect(() => {
     socket?.on("newData", async () => {
@@ -36,6 +35,7 @@ const Detections = () => {
       }
 
       dispatch(setDetections({ detections: detections_found }));
+      dispatch(setSelectedData({selectedData: detections_found.detections[0]}))
     } catch (error) {
       console.log("Error getting detections: ", error);
     }
