@@ -9,32 +9,32 @@ const Insights = () => {
   const settings_SPO2 = {
     width: 200,
     height: 200,
-    value: selectedData.spO2,
+    value: selectedData?.spO2,
     valueMax: 101
   };
   const settings_BP = {
     width: 200,
     height: 200,
-    value: selectedData.bp,
+    value: selectedData?.bp,
     valueMax: 140
   };
   const settings_BPM = {
     width: 200,
     height: 200,
-    value: selectedData.bpm,
+    value: selectedData?.bpm,
     valueMax: 120
   };
   const settings_TEMP = {
     width: 200,
     height: 200,
-    value: Math.floor(Math.round(((selectedData.temp * 9) / 5 + 32) * 10) / 10) || null,
+    value: Math.floor(Math.round(((selectedData?.temp * 9) / 5 + 32) * 10) / 10) || null,
     valueMax: 101,
   };
 
   const handleColor = () => {
-    if (selectedData.prediction == "Low" || selectedData.prediction == "Norm") {
+    if (selectedData?.prediction == "Low" || selectedData?.prediction == "Norm") {
       return "#008000";
-    } else if (selectedData.prediction == "Med") {
+    } else if (selectedData?.prediction == "Med") {
       return "#FFA500";
     } else {
       return "#ff0000";
@@ -44,39 +44,39 @@ const Insights = () => {
   const handleGaugeColor = (metric) => {
     let color;
     if (metric == "spO2") {
-      if (selectedData.spO2 >= 95 && selectedData.spO2 < 101) {
+      if (selectedData?.spO2 >= 95 && selectedData?.spO2 < 101) {
         return (color = "#008000");
-      } else if (selectedData.spO2 >= 90 && selectedData.spO2 < 95) {
+      } else if (selectedData?.spO2 >= 90 && selectedData?.spO2 < 95) {
         return (color = "#FFA500");
       } else {
         return (color = "#ff0000");
       }
     } else if (metric == "bp") {
-      if (selectedData.bp < 120) {
+      if (selectedData?.bp < 120) {
         return (color = "#008000");
       } else if (
-        (selectedData.bp >= 120 && selectedData.bp <= 129) ||
-        (selectedData.bp >= 130 && selectedData.bp <= 139)
+        (selectedData?.bp >= 120 && selectedData?.bp <= 129) ||
+        (selectedData?.bp >= 130 && selectedData?.bp <= 139)
       ) {
         return (color = "#FFA500");
       } else {
         return (color = "#ff0000");
       }
     } else if (metric == "bpm") {
-      if (selectedData.bpm >= 60 && selectedData.bpm <= 100) {
+      if (selectedData?.bpm >= 60 && selectedData?.bpm <= 100) {
         return (color = "#008000");
       } else if (
-        (selectedData.bpm >= 50 && selectedData.bpm <= 59) ||
-        (selectedData.bpm >= 101 && selectedData.bpm <= 120)
+        (selectedData?.bpm >= 50 && selectedData?.bpm <= 59) ||
+        (selectedData?.bpm >= 101 && selectedData?.bpm <= 120)
       ) {
         return (color = "#FFA500");
       } else {
         return (color = "#ff0000");
       }
     } else if (metric == "temp") {
-      if (selectedData.temp <= 37.2) {
+      if (selectedData?.temp <= 37.2) {
         return (color = "#008000");
-      } else if (selectedData.temp >= 37.3 && selectedData.temp <= 37.9) {
+      } else if (selectedData?.temp >= 37.3 && selectedData?.temp <= 37.9) {
         return (color = "#FFA500");
       } else {
         return (color = "#ff0000");
@@ -94,7 +94,7 @@ const Insights = () => {
               <Avatar
                 alt="Profile Image"
                 src={
-                  selectedData.image || `https://i.pravatar.cc/50}`
+                  selectedData?.image || `https://i.pravatar.cc/50}`
                 }
                 sx={{ width: 400, height: 400 }}
                 className="border border-2 border-blue-400 shadow-sm shadow-cyan-300"
@@ -191,12 +191,12 @@ const Insights = () => {
                   height={300}
                   series={[
                     {
-                      label: `${selectedData.prediction} Risk`,
+                      label: `${selectedData?.prediction} Risk`,
                       data: [
-                        selectedData.spO2,
-                        selectedData.bp,
-                        selectedData.bpm,
-                        Math.round(((selectedData.temp * 9) / 5 + 32) * 10) /
+                        selectedData?.spO2,
+                        selectedData?.bp,
+                        selectedData?.bpm,
+                        Math.round(((selectedData?.temp * 9) / 5 + 32) * 10) /
                           10,
                       ],
                       color: handleColor(),
