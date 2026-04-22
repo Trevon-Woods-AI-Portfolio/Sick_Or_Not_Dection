@@ -67,7 +67,7 @@ const Login = () => {
           <div className="">
             <p className="mb-1 font-bold">Password</p>
             <input
-              type="text"
+              type="password"
               className="rounded-md px-3 py-1"
               value={formData.password}
               onChange={(e) =>
