@@ -98,7 +98,7 @@ const Login = () => {
       <section className="w-[60%] flex justify-center items-center mx-10">
         <div className="">
           <img
-            src="../src/assets/BioImpulse_Logo.png"
+            src="https://res.cloudinary.com/dmnspicpk/image/upload/v1776371806/BioImpulse_Logo_xjawfw.png"
             alt=""
             className=" rounded-full"
           />

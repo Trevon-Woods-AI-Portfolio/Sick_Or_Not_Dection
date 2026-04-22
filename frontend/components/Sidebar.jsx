@@ -17,7 +17,7 @@ const Sidebar = ({setChangeGrid, changeGrid}) => {
       <div className="flex justify-between items-center p-4">
         <Avatar
           alt="Profile Image"
-          src={"../assets/BioImpulse_Logo.png"}
+          src={"https://res.cloudinary.com/dmnspicpk/image/upload/v1776371806/BioImpulse_Logo_xjawfw.png"}
           sx={{ width: 65, height: 65 }}
           className="border border-2 border-blue-400"
         />
