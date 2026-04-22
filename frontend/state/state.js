@@ -19,6 +19,9 @@ export const systemSlice = createSlice({
     setLogout: (state) => {
       state.user = null;
       state.isLoggedIn = false;
+      state.currentPage = "Detections";
+      state.detections = [];
+      state.selectedData = null;
     },
     setCurrentPage: (state, action) => {
       state.currentPage = action.payload.currentPage;
