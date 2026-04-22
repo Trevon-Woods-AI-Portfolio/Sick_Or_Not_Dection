@@ -387,7 +387,8 @@ const Analysis = () => {
                   <p className="text-white font-bold text-lg">Today</p>
                 </div>
                 <div className="w-full flex">
-                  <div className="w-[60%] flex justify-center items-center">
+                <div className="w-[60%] flex flex-col justify-begin items-center relative">
+                    <p className="absolute text-white text-sm px-4 text-center bottom-3 font-semibold">{forcast?.gov.periods[0].shortForecast}</p>
                     <img
                       src={weatherCodeLookup[forcast?.openweather.current.weather[0].id]}
                       alt=""
