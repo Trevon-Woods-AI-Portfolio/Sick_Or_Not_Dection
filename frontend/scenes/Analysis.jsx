@@ -10,6 +10,7 @@ import { PieChart } from "@mui/x-charts/PieChart";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { LineChart } from "@mui/x-charts/LineChart";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import AirIcon from "@mui/icons-material/Air";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import UmbrellaIcon from "@mui/icons-material/Umbrella";
@@ -387,7 +388,7 @@ const Analysis = () => {
                   <p className="text-white font-bold text-lg">Today</p>
                 </div>
                 <div className="w-full flex">
-                <div className="w-[60%] flex flex-col justify-begin items-center relative">
+                  <div className="w-[60%] flex flex-col justify-begin items-center relative">
                     <p className="absolute text-white text-sm px-4 text-center bottom-3 font-semibold">{forcast?.gov.periods[0].shortForecast}</p>
                     <img
                       src={weatherCodeLookup[forcast?.openweather.current.weather[0].id]}
@@ -446,7 +447,7 @@ const Analysis = () => {
               </div>
               <div className="h-[25%] flex justify-evenly items-center py-3 px-6">
                 <div className="bg-linear-to-r from-cyan-500 to-blue-500 h-full w-[15%] flex flex-col justify-center items-center rounded-lg">
-                  <p className="font-bold text-white">Tues</p>
+                  <p className="font-bold text-white">{forcast?.gov.periods[2].name}</p>
                   <div>
                     <img
                       src={weatherCodeLookup[forcast?.openweather.daily[1].weather[0].id]}
@@ -457,7 +458,7 @@ const Analysis = () => {
                   <p className="font-bold text-white">{`${Math.round(forcast?.openweather.daily[1].temp.day)}°`}</p>
                 </div>
                 <div className="bg-linear-to-r from-cyan-500 to-blue-500 h-full w-[15%] flex flex-col justify-center items-center rounded-lg">
-                  <p className="font-bold text-white">Wed</p>
+                  <p className="font-bold text-white">{forcast?.gov.periods[4].name}</p>
                   <div>
                     <img
                       src={weatherCodeLookup[forcast?.openweather.daily[2].weather[0].id]}
@@ -468,7 +469,7 @@ const Analysis = () => {
                   <p className="font-bold text-white">{`${Math.round(forcast?.openweather.daily[2].temp.day)}°`}</p>
                 </div>
                 <div className="bg-linear-to-r from-cyan-500 to-blue-500 h-full w-[15%] flex flex-col justify-center items-center rounded-lg">
-                  <p className="font-bold text-white">Thurs</p>
+                  <p className="font-bold text-white">{forcast?.gov.periods[6].name}</p>
                   <div>
                     <img
                       src={weatherCodeLookup[forcast?.openweather.daily[3].weather[0].id]}
@@ -479,7 +480,7 @@ const Analysis = () => {
                   <p className="font-bold text-white">{`${Math.round(forcast?.openweather.daily[3].temp.day)}°`}</p>
                 </div>
                 <div className="bg-linear-to-r from-cyan-500 to-blue-500 h-full w-[15%] flex flex-col justify-center items-center rounded-lg">
-                  <p className="font-bold text-white">Fri</p>
+                  <p className="font-bold text-white">{forcast?.gov.periods[8].name}</p>
                   <div>
                     <img
                       src={weatherCodeLookup[forcast?.openweather.daily[4].weather[0].id]}
@@ -490,7 +491,7 @@ const Analysis = () => {
                   <p className="font-bold text-white">{`${Math.round(forcast?.openweather.daily[4].temp.day)}°`}</p>
                 </div>
                 <div className="bg-linear-to-r from-cyan-500 to-blue-500 h-full w-[15%] flex flex-col justify-center items-center rounded-lg">
-                  <p className="font-bold text-white">Sat</p>
+                  <p className="font-bold text-white">{forcast?.gov.periods[10].name}</p>
                   <div>
                     <img
                       src={weatherCodeLookup[forcast?.openweather.daily[5].weather[0].id]}
@@ -501,7 +502,7 @@ const Analysis = () => {
                   <p className="font-bold text-white">{`${Math.round(forcast?.openweather.daily[5].temp.day)}°`}</p>
                 </div>
                 <div className="bg-linear-to-r from-cyan-500 to-blue-500 h-full w-[15%] flex flex-col justify-center items-center rounded-lg">
-                  <p className="font-bold text-white">Sun</p>
+                  <p className="font-bold text-white">{forcast?.gov.periods[12].name}</p>
                   <div>
                     <img
                       src={weatherCodeLookup[forcast?.openweather.daily[6].weather[0].id]}
