@@ -57,15 +57,14 @@ This project provides a **pre-screening system** that:
 
 ```text
 Camera Feed → YOLO Detection → UI Overlay
-                        ↓
-           Sensor Data Collection
-         (Thermal + Heart Rate)
-                        ↓
-            Time-Based Aggregation
-                        ↓
-              Result Validation
-                        ↓
-               Visual Feedback
+                    ↓
+          Sensor Data Collection (Thermal + Heart Rate)
+                    ↓
+          Time-Based Aggregation
+                    ↓
+            Result Validation
+                    ↓
+             Visual Feedback
 ```
 
 ---
@@ -79,14 +78,13 @@ Start Timer (15s)
         ↓
 Detect Person (YOLO)
         ↓
-Collect Sensor Data
- (Temperature + Heart Rate)
+Collect Sensor Data (Temperature + Heart Rate)
         ↓
 Aggregate Data Over Time
         ↓
 Validate Results
         ↓
-Display Output + ✔ Indicator
+Display Output + Completion Indicator
 ```
 
 ---
@@ -152,9 +150,10 @@ Make sure:
 2. System begins a **15-second data collection window**
 3. Camera detects person
 4. Sensors gather:
-
    * Temperature
+   * Oxygen Saturation
    * Heart rate
+   * Blood Pressure
 5. Data is averaged and validated
 6. Result is displayed with a **visual indicator**
 
@@ -171,15 +170,13 @@ It is intended for **early indication and monitoring purposes only**.
 
 * Multi-person tracking
 * Face recognition (biometric identification)
-* Cloud-based data logging
-* Mobile/web dashboard
 * Integration with access control systems
 
 ---
 
 ## 📸 Demo / Screenshots
 
-*(Add screenshots or demo GIFs here)*
+
 
 ---
 
@@ -192,24 +189,12 @@ Feel free to open issues or submit pull requests.
 
 ## 📄 License
 
-MIT License (or your preferred license)
+MIT License
 
 ---
 
 ## 👤 Author
 
-Your Name
-GitHub: your-username
-
----
-
-If you want, I can:
-
-* Customize this with your **actual repo name and file structure**
-* Add a **clean diagram image**
-* Or make a shorter version for recruiters/portfolio use 🚀
-
-
-Trevon
-Aima 
+Trevon Woods
+Aima Ayaz
 Waseem Basit
