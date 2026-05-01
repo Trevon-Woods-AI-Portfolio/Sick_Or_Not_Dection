@@ -4,7 +4,7 @@
 
 A real-time, multi-sensor system designed to **detect potential illness before individuals enter shared environments** such as classrooms, offices, and public spaces.
 
-Built on a Raspberry Pi, this system integrates **computer vision, physiological sensing, and interactive controls** to provide early warning signals that may help reduce the spread of illness.
+Built on a Raspberry Pi, this system integrates **Machine Learning, Computer Vision, Physiological Sensing, and Interactive Controls** to provide early warning signals through AI prediction that may help reduce the spread of illness.
 
 ---
 
@@ -23,7 +23,7 @@ During the COVID-19 pandemic, illnesses spread rapidly in environments like scho
 This project provides a **pre-screening system** that:
 
 * Detects individuals using a camera
-* Measures physiological indicators (temperature, heart rate)
+* Measures physiological indicators (temperature, heart rate, blood pressure)
 * Collects data over a short time window for reliability
 * Displays results in real time with visual feedback
 
@@ -39,17 +39,17 @@ This project provides a **pre-screening system** that:
 * 🌡️ **Thermal Sensing**
   Uses the MLX90640 to estimate temperature
 
-* ❤️ **Heart Rate Monitoring**
+* ❤️ **Heart Rate & Oxygen Saturation Monitoring**
   Uses the MAX30102
 
 * ⏱️ **Timed Data Collection**
-  Collects data over a defined window (e.g., 15 seconds) for more reliable readings
+  Collects data over a defined window (e.g., 15/45 seconds) for more reliable readings
 
 * 🖱️ **Interactive UI (OpenCV)**
   Touch/click-based controls for starting measurements
 
 * ✅ **Visual Feedback System**
-  Displays validated results with indicators (e.g., checkmarks)
+  Displays validated results with indicators (e.g., "complete" text)
 
 ---
 
@@ -58,7 +58,8 @@ This project provides a **pre-screening system** that:
 ```text
 Camera Feed → YOLO Detection → UI Overlay
                     ↓
-          Sensor Data Collection (Thermal + Heart Rate)
+          Sensor Data Collection
+ (Temperature + Heart Rate & Oxygen Saturation)
                     ↓
           Time-Based Aggregation
                     ↓
@@ -76,11 +77,11 @@ Camera Feed → YOLO Detection → UI Overlay
 ```text
 User Tap (Start)
         ↓
-Start Timer (15s)
+Start Timer (15/45s)
         ↓
 Detect Person (YOLO)
         ↓
-Collect Sensor Data (Temperature + Heart Rate)
+Collect Sensor Data (Temperature + Heart Rate + Oxygen Saturation)
         ↓
 Aggregate Data Over Time
         ↓
