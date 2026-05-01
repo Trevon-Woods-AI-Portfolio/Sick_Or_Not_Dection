@@ -65,6 +65,8 @@ Camera Feed → YOLO Detection → UI Overlay
             Result Validation
                     ↓
              Visual Feedback
+                    ↓
+          Transmit to Dashboard 
 ```
 
 ---
@@ -85,6 +87,8 @@ Aggregate Data Over Time
 Validate Results
         ↓
 Display Output + Completion Indicator
+        ↓
+Send Data To Dashboard
 ```
 
 ---
