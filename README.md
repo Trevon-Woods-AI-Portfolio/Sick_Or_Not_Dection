@@ -202,6 +202,6 @@ MIT License
 
 ## 👤 Author
 
-Trevon Woods
-Aima Ayaz
-Waseem Basit
+- Trevon Woods
+- Aima Ayaz
+- Waseem Basit
