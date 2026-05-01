@@ -159,7 +159,9 @@ Make sure:
    * Heart rate
    * Blood Pressure
 5. Data is averaged and validated
-6. Result is displayed with a **visual indicator**
+6. Data is run through a Logistic Regression Classifier
+7. Data with predictions is sent to Dashboard
+8. Results are displayed on system screen
 
 ---
 
