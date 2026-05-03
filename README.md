@@ -50,6 +50,9 @@ This project provides a **pre-screening system** that:
 
 * ✅ **Visual Feedback System**
   Displays validated results with indicators (e.g., "complete" text)
+  
+* ✅ **Dashboard**
+  Displays prediction and sensor data onto dashboard for further exploratory analysis
 
 ---
 
