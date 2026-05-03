@@ -161,8 +161,8 @@ Make sure:
    * Blood Pressure
 5. Data is averaged and validated
 6. Data is run through a Logistic Regression Classifier
-7. Data with predictions is sent to Dashboard
-8. Results are displayed on system screen
+7. Results are displayed on system screen
+8. Data with predictions is sent to Dashboard
 
 ---
 
